@@ -1,0 +1,223 @@
+(text thrums)
+
+- [Instructor] Now our objects
+
+are all spawning using our
+game manager, and every second,
+
+you'll see a different
+object being created.
+
+Now, you can see over on our hierarchy
+
+that we have all of
+these different objects
+
+that are continually being
+produced and not being destroyed,
+
+so we'll need to destroy
+them in two different ways,
+
+so we'll actually get a register
+for when we actually click
+
+on one of these different
+objects to delete it,
+
+but then also, we need to destroy it
+
+whenever it gets off of
+what the player can see.
+
+Now that we're in our target script,
+
+we're going to add in a new method.
+
+In this case, we're going
+to override a method
+
+that Unity already has made for us,
+
+which is really handy,
+so if we private void,
+
+now we can type OnMouseUp,
+or we can type OnMouseDown.
+
+I'll also type in OnMouseUp
+just so you can see it.
+
+Now, because this
+actually happens so often
+
+in different games and
+in different project,
+
+Unity has already made a method to detect
+
+whenever your mouse is
+inside of a collider
+
+of an object and you click down,
+
+or if you let go of your click,
+
+it will then fire off an event
+
+that will then immediately use
+
+whatever lines of code
+are inside of this block.
+
+Similarly for when we did key presses,
+
+when you press the space bar down
+
+or you let go of the space
+bar, you could detect that,
+
+and then you could fire
+off a line of code.
+
+In this case, we don't
+have to program any of that
+
+because we can just use these
+functions that already exist.
+
+I'll get rid of OnMouseUp,
+
+and I'll just use OnMouseDown for now,
+
+and so when the mouse is down
+inside one of our objects,
+
+we will then destroy that game object.
+
+Just to test our OnMouseDown, let's see,
+
+if we play our game,
+
+you can see the boxes going up in the air,
+
+I clicked in the wrong place.
+
+One's gone, two, three,
+
+four,
+
+five.
+
+And now you can see,
+
+we can delete them when we click on them,
+
+however, they're still getting created,
+
+and they're not being removed
+
+when they actually
+leave the player's view.
+
+Helpfully, in our project,
+
+we actually already have a
+empty game object created
+
+called a sensor, and it has a box collider
+
+already applied to it that has a trigger,
+
+so in our target script,
+
+we can actually use the
+OnTriggerEnter method,
+
+since the sensor is the only thing
+
+that has a trigger applied to it.
+
+And then when one of our objects
+
+enters the trigger for that
+sensor, we can destroy it.
+
+One thing you might've noticed, too,
+
+when we were playing our game,
+
+is that the boxes were
+spawning a little bit too low,
+
+so fortunately, since we saved
+
+the Y spawn position as a variable,
+
+if we just move up the boxes a little bit,
+
+maybe to, let's call a negative two,
+
+now you can see when we test our game,
+
+our boxes should spawn
+a little bit higher,
+
+and then, when they run into the collider,
+
+they get removed when
+they enter the trigger.
+
+One thing you might notice
+in our target script
+
+is in our overridden variables,
+
+you'll see the private keyword,
+
+however, in our custom methods,
+
+you'll see that we don't
+use the private keyword.
+
+A really nice thing about
+scripts is, in fact,
+
+if we don't state that
+something is private or public,
+
+it'll automatically
+actually make our variables,
+
+if they're global, or our methods private.
+
+What you're gonna do is,
+in your target script,
+
+you're going to create an
+OnMouseDown overridden method,
+
+and in that method, you're going
+to destroy the game object,
+
+so that way, when our mouse
+is inside the collider
+
+of one of our objects, when
+we click our mouse down,
+
+it'll actually destroy that game object,
+
+and similarly, you'll create
+an OnTriggerEnter method
+
+where, when one of the game objects runs
+
+into the sensor at the
+bottom of our scene,
+
+it'll destroy that game object, too.
+
+Now it's your turn.
+
+(text thrums)
